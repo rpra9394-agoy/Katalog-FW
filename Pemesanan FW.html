@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FOURWAY COFFEE</title>
+
+<style>
+
+/* ================= DASAR WEBSITE ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f4ef;
+    color: #4b3024;
+    line-height: 1.6;
+}
+
+header {
+    background: #4b3024;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    letter-spacing: 4px;
+}
+
+header p {
+    margin-top: 8px;
+    letter-spacing: 2px;
+}
+
+nav {
+    background: #6b4937;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #e7c7a5;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* ================= HALAMAN UTAMA ================= */
+
+.hero {
+    text-align: center;
+    padding: 65px 20px;
+    background: #eee1d3;
+}
+
+.hero h2 {
+    font-size: 35px;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 10px auto;
+}
+
+.hero .jam {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+/* ================= GALERI ================= */
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.gallery img {
+    width: 220px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ================= BEST SELLER ================= */
+
+.best-seller {
+    background: #eee1d3;
+    text-align: center;
+}
+
+.best-seller img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.best-seller p {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* ================= KATALOG MENU ================= */
+
+.menu-container {
+    max-width: 950px;
+    margin: auto;
+}
+
+.menu-category {
+    margin-bottom: 35px;
+}
+
+.menu-category h3 {
+    background: #5c3827;
+    color: white;
+    padding: 12px;
+    border-radius: 6px 6px 0 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 13px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #e7d4c1;
+}
+
+tr:hover {
+    background: #f5eee6;
+}
+
+/* ================= PEMESANAN ONLINE ================= */
+
+.order-section {
+    background: #eee1d3;
+}
+
+.order-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.order-container label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.order-container input,
+.order-container select,
+.order-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.order-container button {
+    cursor: pointer;
+}
+
+.btn-tambah {
+    background: #5c3827;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.btn-tambah:hover {
+    background: #8b5e3c;
+}
+
+/* ================= KERANJANG ================= */
+
+.cart {
+    margin-top: 30px;
+}
+
+.cart h3 {
+    border-bottom: 2px solid #5c3827;
+    padding-bottom: 10px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.cart-item button {
+    border: none;
+    background: #8b3d2e;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 5px;
+}
+
+.cart-item button:hover {
+    background: #b34b39;
+}
+
+.total-harga {
+    background: #eee1d3;
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.btn-checkout {
+    width: 100%;
+    background: #25a45a;
+    color: white;
+    border: none;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-checkout:hover {
+    background: #168343;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #4b3024;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer a {
+    color: #e7c7a5;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 7px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .gallery img {
+        width: 45%;
+        height: 130px;
+    }
+
+    th, td {
+        padding: 9px 5px;
+        font-size: 13px;
+    }
+
+    .order-container {
+        padding: 17px;
+    }
+
+    .cart-item {
+        font-size: 13px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <h1>FOURWAY COFFEE</h1>
+
+    <p>COFFEE • TEA • REFRESHMENT • SNACK</p>
+
+</header>
+
+
+<!-- ================= NAVIGASI ================= -->
+
+<nav>
+
+    <a href="#home">Home</a>
+
+    <a href="#gallery">Gallery</a>
+
+    <a href="#menu">Menu</a>
+
+    <a href="#order">Order Online</a>
+
+    <a href="#contact">Contact</a>
+
+</nav>
+
+
+<!-- ================= HALAMAN UTAMA ================= -->
+
+<section class="hero" id="home">
+
+    <h1><marquee width="50%" bgcolor="e7c7a5"> LESS RUSH, MORE ESPRESSO </marquee></h1>
+
+    <p>
+        Hallo Para Pecinta Kopi!
+
+        Ini adalah website Risqi Prayoga yang dibuat
+        untuk para customer melihat-lihat menu coffee.
+
+        Selamat datang di FOURWAY COFFEE.
+        Tempat menikmati kopi dan menghabiskan waktu
+        bersama teman maupun keluarga.
+    </p>
+
+    <p>
+        Alamat: Jalan Kenan Sandan,
+        Perempatan Asrama Haji.
+    </p>
+
+    <p class="jam">
+        Open Every Day 07.30 AM - 23.00 PM
+    </p>
+
+</section>
+
+
+<!-- ================= GALERI ================= -->
+
+<section id="gallery">
+
+    <h2>OUR GALLERY</h2>
+
+    <div class="gallery">
+
+        <img src="Foto gw1.jpeg"
+        alt="Fourway Coffee 1">
+
+        <img src="Foto gw.jpeg"
+        alt="Fourway Coffee 2">
+
+        <img src="Foto 3.jpeg"
+        alt="Fourway Coffee 3">
+
+        <img src="Foto 4.jpeg"
+        alt="Fourway Coffee 4">
+
+    </div>
+
+</section>
+
+
+<!-- ================= BEST SELLER ================= -->
+
+<section class="best-seller">
+
+    <h2>BEST SELLER</h2>
+
+    <img src="espreso.jpeg"
+    alt="Produk Best Seller Fourway Coffee">
+
+    <h3>SPLIT COFFEE</h3>
+
+    <p>
+        Kami percaya bahwa setiap orang memiliki cerita,
+        setiap pertemuan memiliki makna, dan setiap cangkir
+        kopi memiliki caranya sendiri untuk menemani keduanya.
+
+        Split Coffee hadir bukan hanya untuk menyajikan kopi,
+        tetapi juga untuk menjadi tempat di mana ide bermunculan,
+        pertemanan tumbuh, percakapan mengalir, dan kenangan tercipta.
+
+        Dari pagi yang penuh semangat hingga malam yang
+        membutuhkan ketenangan, selalu ada ruang untuk
+        menikmati secangkir kopi bersama kami.
+
+        Datanglah untuk menikmati kopi, duduklah untuk
+        menikmati suasana, dan pulanglah dengan cerita
+        yang berbeda.
+    </p>
+
+</section>
+
+
+<!-- ================= KATALOG MENU ================= -->
+
+<section id="menu">
+
+    <h2>OUR MENU</h2>
+
+    <div class="menu-container">
+
+
+        <!-- COFFEE -->
+
+        <div class="menu-category">
+
+            <h3>COFFEE</h3>
+
+            <table>
+
+                <tr>
+                    <th>Nama Menu</th>
+                    <th>ICE</th>
+                    <th>HOT</th>
+                </tr>
+
+                <tr><td>Signature Fourway</td><td>23k</td><td>25k</td></tr>
+
+                <tr><td>Caramel</td><td>20k</td><td>22k</td></tr>
+
+                <tr><td>Baileys Latte</td><td>20k</td><td>-</td></tr>
+
+                <tr><td>Coffee Latte</td><td>18k</td><td>20k</td></tr>
+
+                <tr><td>Kopi Susu</td><td>18k</td><td>20k</td></tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- AMERICANO -->
+
+        <div class="menu-category">
+
+            <h3>AMERICANO SERIES</h3>
+
+            <table>
+
+                <tr>
+                    <th>Nama Menu</th>
+                    <th>ICE</th>
+                    <th>HOT</th>
+                </tr>
+
+                <tr><td>Americano Berry</td><td>20k</td><td>-</td></tr>
+
+                <tr><td>Americano Peach</td><td>20k</td><td>-</td></tr>
+
+                <tr><td>Americano Lemon</td><td>20k</td><td>-</td></tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- NON COFFEE -->
+
+        <div class="menu-category">
+
+            <h3>NON COFFEE</h3>
+
+            <table>
+
+                <tr>
+                    <th>Nama Menu</th>
+                    <th>ICE</th>
+                    <th>HOT</th>
+                </tr>
+
+                <tr><td>Matcha</td><td>23k</td><td>25k</td></tr>
+
+                <tr><td>Red Velvet</td><td>20k</td><td>22k</td></tr>
+
+                <tr><td>Chocolate</td><td>20k</td><td>22k</td></tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- REFRESHMENT -->
+
+        <div class="menu-category">
+
+            <h3>REFRESHMENT</h3>
+
+            <table>
+
+                <tr>
+                    <th>Nama Menu</th>
+                    <th>ICE</th>
+                    <th>HOT</th>
+                </tr>
+
+                <tr><td>Elixir</td><td>20k</td><td>-</td></tr>
+
+                <tr><td>Punch Squaze</td><td>23k</td><td>-</td></tr>
+
+                <tr><td>Pilcof</td><td>23k</td><td>-</td></tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- TEA -->
+
+        <div class="menu-category">
+
+            <h3>TEA</h3>
+
+            <table>
+
+                <tr>
+                    <th>Nama Menu</th>
+                    <th>ICE</th>
+                    <th>HOT</th>
+                </tr>
+
+                <tr><td>Tea</td><td>10k</td><td>10k</td></tr>
+
+                <tr><td>Lemon Tea</td><td>15k</td><td>15k</td></tr>
+
+                <tr><td>Lychee Tea</td><td>18k</td><td>-</td></tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- SNACK -->
+
+        <div class="menu-category">
+
+            <h3>SNACK</h3>
+
+            <table>
+
+                <tr>
+                    <th>Nama Menu</th>
+                    <th>Harga</th>
+                </tr>
+
+                <tr><td>Kentang Goreng</td><td>18k</td></tr>
+
+                <tr><td>Nugget</td><td>18k</td></tr>
+
+                <tr><td>Mix Platter</td><td>30k</td></tr>
+
+                <tr><td>Mie Goreng</td><td>15k</td></tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PEMESANAN ONLINE ================= -->
+
+<section class="order-section" id="order">
+
+    <h2>ONLINE ORDER</h2>
+
+    <p style="text-align:center; margin-bottom:25px;">
+
+        Pesan kopi favoritmu sekarang!
+        Pilih menu, masukkan jumlah pesanan,
+        dan checkout melalui WhatsApp.
+
+    </p>
+
+
+    <div class="order-container">
+
+        <h3>FORM PEMESANAN</h3>
+
+
+        <!-- DATA PELANGGAN -->
+
+        <label>Nama Pelanggan</label>
+
+        <input type="text"
+        id="nama"
+        placeholder="Masukkan nama kamu">
+
+
+        <label>Nomor WhatsApp</label>
+
+        <input type="tel"
+        id="telepon"
+        placeholder="Contoh: 081234567890">
+
+
+        <!-- PILIH MENU -->
+
+        <label>Pilih Menu</label>
+
+        <select id="pilihanMenu">
+
+            <option value="">-- Pilih Menu --</option>
+
+            <optgroup label="COFFEE">
+
+                <option value="Signature Fourway Ice|23000">Signature Fourway Ice</option>
+
+                <option value="Signature Fourway Hot|25000">Signature Fourway Hot</option>
+
+                <option value="Caramel Ice|20000">Caramel Ice</option>
+
+                <option value="Caramel Hot|22000">Caramel Hot</option>
+
+                <option value="Baileys Latte Ice|20000">Baileys Latte Ice</option>
+
+                <option value="Coffee Latte Ice|18000">Coffee Latte Ice</option>
+
+                <option value="Coffee Latte Hot|20000">Coffee Latte Hot</option>
+
+                <option value="Kopi Susu Ice|18000">Kopi Susu Ice</option>
+
+                <option value="Kopi Susu Hot|20000">Kopi Susu Hot</option>
+
+            </optgroup>
+
+
+            <optgroup label="AMERICANO SERIES">
+
+                <option value="Americano Berry|20000">Americano Berry</option>
+
+                <option value="Americano Peach|20000">Americano Peach</option>
+
+                <option value="Americano Lemon|20000">Americano Lemon</option>
+
+            </optgroup>
+
+
+            <optgroup label="NON COFFEE">
+
+                <option value="Matcha Ice|23000">Matcha Ice</option>
+
+                <option value="Matcha Hot|25000">Matcha Hot</option>
+
+                <option value="Red Velvet Ice|20000">Red Velvet Ice</option>
+
+                <option value="Red Velvet Hot|22000">Red Velvet Hot</option>
+
+                <option value="Chocolate Ice|20000">Chocolate Ice</option>
+
+                <option value="Chocolate Hot|22000">Chocolate Hot</option>
+
+            </optgroup>
+
+
+            <optgroup label="REFRESHMENT">
+
+                <option value="Elixir|20000">Elixir</option>
+
+                <option value="Punch Squaze|23000">Punch Squaze</option>
+
+                <option value="Pilcof|23000">Pilcof</option>
+
+            </optgroup>
+
+
+            <optgroup label="TEA">
+
+                <option value="Tea Ice|10000">Tea Ice</option>
+
+                <option value="Tea Hot|10000">Tea Hot</option>
+
+                <option value="Lemon Tea Ice|15000">Lemon Tea Ice</option>
+
+                <option value="Lemon Tea Hot|15000">Lemon Tea Hot</option>
+
+                <option value="Lychee Tea|18000">Lychee Tea</option>
+
+            </optgroup>
+
+
+            <optgroup label="SNACK">
+
+                <option value="Kentang Goreng|18000">Kentang Goreng</option>
+
+                <option value="Nugget|18000">Nugget</option>
+
+                <option value="Mix Platter|30000">Mix Platter</option>
+
+                <option value="Mie Goreng|15000">Mie Goreng</option>
+
+            </optgroup>
+
+        </select>
+
+
+        <label>Jumlah Pesanan</label>
+
+        <input type="number"
+        id="jumlah"
+        min="1"
+        value="1">
+
+
+        <button type="button"
+        class="btn-tambah"
+        onclick="tambahKeranjang()">
+
+            + TAMBAH KE KERANJANG
+
+        </button>
+
+
+        <!-- KERANJANG -->
+
+        <div class="cart">
+
+            <h3>KERANJANG PESANAN</h3>
+
+            <div id="daftarKeranjang">
+
+                <p style="margin-top:15px;">
+                    Belum ada pesanan.
+                </p>
+
+            </div>
+
+
+            <div class="total-harga">
+
+                Total: <span id="totalHarga">Rp0</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- METODE PEMESANAN -->
+
+        <label>Metode Pemesanan</label>
+
+        <select id="metodePesanan">
+
+            <option value="Take Away">Take Away</option>
+
+            <option value="Dine In">Dine In</option>
+
+        </select>
+
+
+        <!-- METODE PEMBAYARAN -->
+
+        <label>Metode Pembayaran</label>
+
+        <select id="pembayaran">
+
+            <option value="Tunai">Tunai</option>
+
+            <option value="Transfer Bank">Transfer Bank</option>
+
+            <option value="QRIS">QRIS</option>
+
+        </select>
+
+
+        <label>Catatan Tambahan</label>
+
+        <textarea id="catatan"
+        rows="3"
+        placeholder="Contoh: Gula sedikit, es sedikit, dan lainnya"></textarea>
+
+
+        <!-- CHECKOUT -->
+
+        <button type="button"
+        class="btn-checkout"
+        onclick="checkoutWhatsApp()">
+
+            PESAN SEKARANG VIA WHATSAPP
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <h2>FOURWAY COFFEE</h2>
+
+    <p>COFFEE • TEA • REFRESHMENT • SNACK</p>
+
+    <p>
+        Jalan Kenan Sandan,
+        Perempatan Asrama Haji.
+    </p>
+
+    <p>Open Every Day 07.30 AM - 23.00 PM</p>
+
+    <p>
+        Instagram:
+        <a href="https://www.instagram.com/fourway.coffee/"
+        target="_blank">
+
+            @fourway.coffee
+
+        </a>
+    </p>
+
+    <br>
+
+    <p>© 2026 FOURWAY COFFEE</p>
+
+    <p>Website by Risqi Prayoga</p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+// ================= DATA KERANJANG =================
+
+let keranjang = [];
+
+
+// ================= FORMAT RUPIAH =================
+
+function formatRupiah(angka) {
+
+    return "Rp" + angka.toLocaleString("id-ID");
+
+}
+
+
+// ================= TAMBAH PESANAN =================
+
+function tambahKeranjang() {
+
+    let pilihan = document.getElementById("pilihanMenu").value;
+
+    let jumlah = parseInt(document.getElementById("jumlah").value);
+
+    if (pilihan === "") {
+
+        alert("Silakan pilih menu terlebih dahulu!");
+
+        return;
+
+    }
+
+    if (!Number.isInteger(jumlah) || jumlah < 1) {
+
+        alert("Jumlah pesanan minimal 1!");
+
+        return;
+
+    }
+
+    let data = pilihan.split("|");
+
+    let namaMenu = data[0];
+
+    let harga = Number(data[1]);
+
+
+    let item = keranjang.find(p => p.nama === namaMenu);
+
+
+    if (item) {
+
+        item.jumlah += jumlah;
+
+    } else {
+
+        keranjang.push({
+
+            nama: namaMenu,
+
+            harga: harga,
+
+            jumlah: jumlah
+
+        });
+
+    }
+
+
+    document.getElementById("pilihanMenu").value = "";
+
+    document.getElementById("jumlah").value = 1;
+
+
+    tampilkanKeranjang();
+
+}
+
+
+// ================= MENAMPILKAN KERANJANG =================
+
+function tampilkanKeranjang() {
+
+    let daftar = document.getElementById("daftarKeranjang");
+
+    daftar.innerHTML = "";
+
+    let total = 0;
+
+
+    if (keranjang.length === 0) {
+
+        daftar.innerHTML = "<p>Belum ada pesanan.</p>";
+
+    }
+
+
+    keranjang.forEach((item, index) => {
+
+        let subtotal = item.harga * item.jumlah;
+
+        total += subtotal;
+
+
+        daftar.innerHTML += `
+
+            <div class="cart-item">
+
+                <div>
+
+                    <strong>${item.nama}</strong><br>
+
+                    ${formatRupiah(item.harga)}
+                    x ${item.jumlah}
+
+                    <br>
+
+                    <strong>${formatRupiah(subtotal)}</strong>
+
+                </div>
+
+                <div>
+
+                    <button onclick="kurangiPesanan(${index})">-</button>
+
+                    <button onclick="tambahJumlah(${index})">+</button>
+
+                    <button onclick="hapusPesanan(${index})">Hapus</button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById("totalHarga").innerText =
+        formatRupiah(total);
+
+}
+
+
+// ================= TAMBAH JUMLAH =================
+
+function tambahJumlah(index) {
+
+    keranjang[index].jumlah++;
+
+    tampilkanKeranjang();
+
+}
+
+
+// ================= KURANGI JUMLAH =================
+
+function kurangiPesanan(index) {
+
+    keranjang[index].jumlah--;
+
+    if (keranjang[index].jumlah <= 0) {
+
+        keranjang.splice(index, 1);
+
+    }
+
+    tampilkanKeranjang();
+
+}
+
+
+// ================= HAPUS PESANAN =================
+
+function hapusPesanan(index) {
+
+    keranjang.splice(index, 1);
+
+    tampilkanKeranjang();
+
+}
+
+
+// ================= CHECKOUT WHATSAPP =================
+
+function checkoutWhatsApp() {
+
+    let nama = document.getElementById("nama").value.trim();
+
+    let telepon = document.getElementById("telepon").value.trim();
+
+    let metode = document.getElementById("metodePesanan").value;
+
+    let pembayaran = document.getElementById("pembayaran").value;
+
+    let catatan = document.getElementById("catatan").value.trim();
+
+
+    if (nama === "" || telepon === "") {
+
+        alert("Silakan lengkapi nama dan nomor WhatsApp!");
+
+        return;
+
+    }
+
+
+    if (keranjang.length === 0) {
+
+        alert("Keranjang pesanan masih kosong!");
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    let pesan = "*PESANAN ONLINE FOURWAY COFFEE*";
+
+    pesan += "\n\nNama: " + nama;
+
+    pesan += "\nWhatsApp: " + telepon;
+
+    pesan += "\n\n*DAFTAR PESANAN*";
+
+
+    keranjang.forEach((item, index) => {
+
+        let subtotal = item.harga * item.jumlah;
+
+        total += subtotal;
+
+        pesan += "\n\n" + (index + 1) + ". " + item.nama;
+
+        pesan += "\n   Harga: " + formatRupiah(item.harga);
+
+        pesan += "\n   Jumlah: " + item.jumlah;
+
+        pesan += "\n   Subtotal: " + formatRupiah(subtotal);
+
+    });
+
+
+    pesan += "\n\n*TOTAL PEMBAYARAN: " + formatRupiah(total) + "*";
+
+    pesan += "\nMetode Pesanan: " + metode;
+
+    pesan += "\nPembayaran: " + pembayaran;
+
+
+    if (catatan !== "") {
+
+        pesan += "\nCatatan: " + catatan;
+
+    }
+
+
+    pesan += "\n\nTerima kasih! Saya ingin memesan di FOURWAY COFFEE.";
+
+
+    // GANTI NOMOR WHATSAPP DI BAWAH INI
+
+    let nomorWhatsApp = "628XXXXXXXXXX";
+
+
+    let url = "https://wa.me/" + nomorWhatsApp +
+    "?text=" + encodeURIComponent(pesan);
+
+
+    window.open(url, "_blank");
+
+}
+
+
+// ================= AKHIR JAVASCRIPT =================
+
+</script>
+
+</body>
+</html>
